@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jarvis</title>
+<meta name="theme-color" content="#0C4F31">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Jarvis">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+  :root{--bg:#0B1711;--ink:#E2F3E8;--muted:#9BB8A6;--green:#45C482;--on-green:#04170D}
+  html,body{height:100%;margin:0}
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;
+    padding:max(24px,env(safe-area-inset-top)) max(24px,env(safe-area-inset-right)) max(24px,env(safe-area-inset-bottom)) max(24px,env(safe-area-inset-left))}
+  img{width:96px;height:96px;border-radius:22px}
+  h1{margin:0;font-size:28px}
+  p{margin:0;color:var(--muted);font-size:14px;max-width:300px;line-height:1.45}
+  a{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:14px;background:var(--green);color:var(--on-green);font-weight:700;text-decoration:none}
+</style>
+</head>
+<body>
+  <img src="apple-touch-icon.png" alt="">
+  <h1>Jarvis</h1>
+  <p id="msg">Открываю…</p>
+  <a id="go" href="https://claude.ai/artifact/UNVVXz2JBb3WExebTFgUmf">Открыть Jarvis</a>
+  <script>
+    // Значок на экране «Домой» — этот сайт; сам Jarvis живёт в Claude, поэтому сразу переходим туда.
+    const url = document.getElementById("go").href;
+    setTimeout(() => { location.replace(url); }, 300);
+    setTimeout(() => { document.getElementById("msg").textContent = "Если Jarvis не открылся — нажмите кнопку."; }, 2500);
+  </script>
+</body>
+</html>
